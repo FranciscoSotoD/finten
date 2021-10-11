@@ -1,0 +1,71 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.formulario {
+    background-color: #000000;
+    padding: 1rem 2rem;
+    color: v.$grisClaro;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: .3rem;
+    &__descripcion {
+        font-size: 1.4rem;
+    }
+    &__registrate {
+        color: v.$enlace;
+    }
+    &__noCuenta,
+    &__registrate,
+    &__avisoPrivacidad,
+    &__terminosCondiciones {
+        font-size: 1.4rem;
+    }
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+
+    &__usuario,
+    &__contraseña {
+        text-align: left;
+    }
+    &__recuperar {
+        color: v.$enlace;
+        text-align: right;
+    }
+    input:not([type="submit"]) {
+        padding: 1rem;
+        border-radius: 1rem;
+        margin-bottom: 2rem;
+        outline: none;
+        border: 3px solid transparent;
+        &:focus {
+            border: 3px solid v.$enlace;
+        }
+    }
+    &__recuperar {
+        margin-bottom: 2rem;
+    }
+    input[type="submit"] {
+        padding: .8rem;
+        width: 80%;
+        margin: 0 auto;
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        background-color: v.$enlace;
+        border: none;
+        color: v.$primario;
+        transition-property: background-color color;
+        transition-duration: .3s;
+        cursor: pointer;
+        @include m.desktop { 
+            width: 50%;
+        }
+        &:hover {
+            background-color: v.$primario;
+            color: v.$enlace;
+        }
+    }
+}
